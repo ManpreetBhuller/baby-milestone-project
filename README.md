@@ -1,6 +1,8 @@
-# baby-milestone-project
-This project is to track the milestone achieved by my new born.
+# BabySteps
 
-Tech stack used here is Java spring boot for now. 
+A microservices-based baby milestone tracking application, built with Spring Boot 3 and Java 21.
 
-Will keep posted on updates here...
+## Overview
+
+BabySteps helps parents track and celebrate their child's developmental milestones. The project is being built as a portfolio piece to demonstrate production-grade backend engineering practices: clean domain design, proper testing strategy, event-driven communication, and REST API conventions.
+
