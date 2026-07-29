@@ -14,14 +14,16 @@ public class Milestone {
     private UUID milestoneId;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "baby_id")
     private Baby baby;
 
+    @Enumerated(EnumType.STRING)
     private MilestoneType type;
 
     private String title;
     private String notes;
     private LocalDate achievedOn;
-    private Instant createdOn;
+    private Instant createdAt;
 
     public UUID getMilestoneId() {
 
@@ -72,11 +74,11 @@ public class Milestone {
         this.achievedOn = achievedOn;
     }
 
-    public Instant getCreatedOn() {
-        return createdOn;
+    public Instant getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreatedOn(Instant createdOn) {
-        this.createdOn = createdOn;
+    public void setCreatedAt(Instant createdOn) {
+        this.createdAt = createdOn;
     }
 }

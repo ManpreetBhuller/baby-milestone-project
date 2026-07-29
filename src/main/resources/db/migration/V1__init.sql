@@ -10,7 +10,7 @@ CREATE TABLE babies(
 CREATE TABLE milestones(
     milestone_id UUID primary key,
     baby_id UUID not null references babies(baby_id),
-    milestone_type varchar(20) not null,
+    type varchar(20) not null,
     title varchar(200),
     notes varchar(250),
     achieved_on date not null,
