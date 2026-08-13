@@ -1,7 +1,9 @@
 package com.babysteps.naaz.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -14,13 +16,16 @@ public class Baby {
 
     private String firstName;
     private String lastName;
-    private int age;
     private String gender;
     private LocalDate birthDate;
 
     public UUID getBabyId() {
         return babyId;
     }
+
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private Instant createdAt;
 
     public void setBabyId(UUID babyId) {
         this.babyId = babyId;
@@ -42,20 +47,20 @@ public class Baby {
         this.lastName = lastName;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public String getGender() {
         return gender;
     }
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
     }
 
     public LocalDate getBirthDate() {

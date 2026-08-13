@@ -2,9 +2,9 @@ CREATE TABLE babies(
     baby_id UUID primary key ,
     first_name varchar(100),
     last_name varchar(100) not null,
-    age int not null,
     gender varchar(20),
-    birth_date date not null
+    birth_date date not null,
+    created_at timestamp not null DEFAULT now()
 );
 
 CREATE TABLE milestones(
